@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MJ Screen with Editable Parameters</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    /* 画像と入力フィールドを格納するコンテナ */
+    .screen-container {
+        position: relative;
+        /* 画像の元のアスペクト比に合わせてサイズ設定 */
+        width: 851px;
+        height: 808px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* 背景画像 */
+    .background-image {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    /* 全ての入力フィールドに共通のスタイル */
+    .parameter-input {
+        position: absolute;
+        background-color: #ffffff;
+        border: 1px solid #555;
+        box-sizing: border-box;
+        font-size: 19px;
+        font-weight: bold;
+        text-align: left;
+        padding-left: 5px;
+    }
+
+    /* 全てのボタンに共通のスタイル */
+    .action-button {
+        position: absolute;
+        background-color: transparent; /* 背景を透明にする */
+        border: none;
+        cursor: pointer;
+        color: transparent; /* テキストを透明にする */
+        user-select: none; /* テキスト選択を無効にする */
+    }
+    
+    .action-button:hover {
+        background-color: rgba(255, 255, 255, 0.2); /* ホバー時に少し白くする */
+    }
+    
+    .action-button:active {
+        background-color: rgba(0, 0, 0, 0.2); /* クリック時に少し暗くする */
+    }
+
+
+    /* --- 各要素の個別位置設定 --- */
+    
+    /* 入力フィールド */
+    #input-34 { top: 22.8%; left: 9.9%; width: 10.8%; height: 4%; }
+    #input-90 { top: 30.2%; left: 9.9%; width: 10.8%; height: 4%; }
+    #input-20 { top: 37.6%; left: 9.9%; width: 10.8%; height: 4%; }
+    #input-0a { top: 48.9%; left: 9.9%; width: 10.8%; height: 4%; }
+    
+    #input-0b { top: 12.3%; left: 81.3%; width: 10.8%; height: 4%; }
+    #input-0c { top: 24.3%; left: 81.3%; width: 10.8%; height: 4%; }
+    #input-0d { top: 30.7%; left: 81.3%; width: 10.8%; height: 4%; }
+    #input-0e { top: 37.1%; left: 81.3%; width: 10.8%; height: 4%; }
+    
+    #input-15 { top: 43.5%; left: 81.3%; width: 10.8%; height: 4%; }
+    #input-108 { top: 52.6%; left: 81.3%; width: 10.8%; height: 4%; }
+    #input-23 { top: 59.0%; left: 81.3%; width: 10.8%; height: 4%; }
+
+    /* ボタン */
+    #btn-print { top: 88.5%; left: 9.8%; width: 11.2%; height: 6.8%; }
+    #btn-protocol { top: 88.5%; left: 55.0%; width: 11.2%; height: 6.8%; }
+    #btn-last { top: 88.5%; left: 68.0%; width: 11.2%; height: 6.8%; }
+    #btn-ok { top: 88.5%; left: 81.0%; width: 11.2%; height: 6.8%; }
+
+</style>
+</head>
+<body>
+
+<div class="screen-container">
+    <!-- 背景画像 -->
+    <img src="https://storage.googleapis.com/answer-generation-tool-prod/images/5f047712-ad94-43cb-9818-4d5673070cd9.jpeg" alt="Background screen for MJ" class="background-image">
+
+    <!-- 編集可能なパラメータ入力フィールド -->
+    <input type="text" id="input-34" class="parameter-input" value="34">
+    <input type="text" id="input-90" class="parameter-input" value="90">
+    <input type="text" id="input-20" class="parameter-input" value="20">
+    <input type="text" id="input-0a" class="parameter-input" value="0">
+    
+    <input type="text" id="input-0b" class="parameter-input" value="0">
+    <input type="text" id="input-0c" class="parameter-input" value="0">
+    <input type="text" id="input-0d" class="parameter-input" value="0">
+    <input type="text" id="input-0e" class="parameter-input" value="0">
+    
+    <input type="text" id="input-15" class="parameter-input" value="15">
+    <input type="text" id="input-108" class="parameter-input" value="108">
+    <input type="text" id="input-23" class="parameter-input" value="23">
+
+    <!-- クリック可能なボタン -->
+    <button id="btn-print" class="action-button">Print</button>
+    <button id="btn-protocol" class="action-button">Protocol</button>
+    <button id="btn-last" class="action-button">Last</button>
+    <button id="btn-ok" class="action-button">Ok</button>
+</div>
+
+<script>
+    // ボタンがクリックされたときにアラートを表示する簡単なスクリプト
+    document.getElementById('btn-print').addEventListener('click', () => {
+        alert('Print button clicked!');
+    });
+    document.getElementById('btn-protocol').addEventListener('click', () => {
+        alert('Protocol button clicked!');
+    });
+    document.getElementById('btn-last').addEventListener('click', () => {
+        alert('Last button clicked!');
+    });
+    document.getElementById('btn-ok').addEventListener('click', () => {
+        alert('Ok button clicked!');
+    });
+</script>
+
+</body>
+</html>
